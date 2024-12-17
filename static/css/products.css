@@ -1,0 +1,201 @@
+/* products.css */
+
+/* التنسيق العام */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  /* شعار النافبار */
+  .navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #f84258 !important;
+    transition: color 0.3s;
+  }
+  
+  .navbar-brand:hover {
+    color: #ff6b81 !important;
+  }
+  
+  /* روابط النافبار */
+  .nav-link {
+    font-weight: 500;
+    color: #333 !important;
+  }
+  
+  .nav-link.active {
+    color: #f84258 !important;
+  }
+  
+  .nav-link:hover {
+    color: #f84258 !important;
+  }
+  
+  /* العنوان الرئيسي */
+  .main-head-of-products {
+    color: #333;
+    padding-top: 120px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+  }
+  
+  .main-head-of-products .colored-word-bigger-size {
+    color: #f84258;
+    font-size: 3rem;
+  }
+  
+  /* قسم الصور الخلفية */
+  .bg-images {
+    text-align: center;
+    background-color: #f3f3f3;
+    padding: 40px 0;
+  }
+  
+  .bg-images img {
+    width: 100%;
+    max-width: 800px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .bg-images img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* رسالة المعلومات */
+  .msg-ps {
+    color: #333;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  .colored-word {
+    color: #f84258;
+    font-weight: 700;
+  }
+  
+  .colored-word-bigger-size {
+    color: #f84258;
+    font-size: 3rem;
+  }
+  
+  /* الفواصل */
+  .products-hr, .last-hr-of-product, .hr-of-cart-head {
+    border: 1px solid #333;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto;
+  }
+  
+  /* تفاصيل العربة */
+  .cart-details {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 40px auto;
+  }
+  
+  .cart-details li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .head-of-cart {
+    color: #f84258;
+  }
+  
+  .hr-of-cart-head {
+    border: 1px solid #333;
+    width: 120px;
+    margin: 10px auto;
+  }
+  
+  .btn-clear-list {
+    width: 150px;
+    height: 45px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    background-color: #f84258;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+  
+  .btn-clear-list:hover {
+    background-color: #ff6b81;
+  }
+  
+  .cart-details ul {
+    list-style-type: decimal;
+    padding-left: 20px;
+  }
+  
+  /* تنسيق الصور داخل البطاقات */
+  .card-img-top {
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card-img-top:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+  
+  /* العناوين والنصوص داخل البطاقات */
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+  }
+  
+  .card-text {
+    color: #555;
+  }
+  
+  /* سعر المنتج */
+  .price {
+    color: #f84258;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  /* الرسالة الخاتمية */
+  .sry-msg {
+    color: #333;
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .sry-msg .colored-word {
+    color: #f84258;
+  }
+  
+  /* تعديلات الاستجابة */
+  @media screen and (max-width: 768px) {
+    .main-head-of-products {
+        font-size: 2rem;
+        padding-top: 100px;
+        margin-top: 200px;
+    }
+    .main-head-of-products .colored-word-bigger-size {
+        font-size: 2.5rem;
+    }
+    .msg-ps {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    .cart-details {
+        padding: 15px;
+        margin: 30px auto;
+    }
+  }
+  

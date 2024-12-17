@@ -1,0 +1,22 @@
+<!-- templates/accounts/login.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>تسجيل الدخول</title>
+</head>
+<body>
+    <h2>تسجيل الدخول</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">دخول</button>
+    </form>
+    <p>ليس لديك حساب؟ <a href="{% url 'register' %}">تسجيل حساب جديد</a></p>
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

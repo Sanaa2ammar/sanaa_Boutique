@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ category.name }} | Sanaa Boutique{% endblock %}
+
+{% block content %}
+    <!-- Main Header -->
+    <h1 class="main-head-of-color-gold">{{ category.name }}</h1>
+    <center><hr></center> 
+    <!-- End of Main Header -->
+
+    <!-- Background Image Section -->
+    <div class="product-img">
+        <img class="product-center-img" src="{{ category.image.url }}" alt="{{ category.name }}">
+    </div> 
+    <br><br>
+
+    <!-- Category Description Section -->
+    <div class="category-description">
+        <p>{{ category.description }}</p>
+    </div>
+    <br><br>
+
+    <!-- Products in Category Section -->
+    <center><h2 class="trends-header">المنتجات في هذه الفئة:</h2></center><br><br>
+    <ul class="list-group">
+        {% for product in category.products.all %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="{% url 'product-detail' product.pk %}">{{ product.name }}</a>
+                <span>{{ product.price }} شيكل</span>
+            </li>
+        {% empty %}
+            <p>لا توجد منتجات في هذه الفئة.</p>
+        {% endfor %}
+    </ul>
+    <br><br>
+{% endblock %}

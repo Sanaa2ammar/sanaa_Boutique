@@ -1,0 +1,116 @@
+<!-- products/templates/products/product_list.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/product_list.css' %}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- إضافة jQuery -->
+{% endblock %}
+
+{% block content %}
+    <!-- المحتوى الحالي للقالب الخاص بك -->
+
+    <!-- تحديث زر "إضافة إلى السلة" ليشمل خاصية onclick -->
+    {% for category in categories %}
+        <section class="category-section {% if forloop.first %}mt-5{% endif %}">
+            <div class="container">
+                <h1>{{ category.name }}</h1>
+                <hr class="products-hr">
+                <div class="grid-layout mt-4">
+                    {% for product in category.products.all %}
+                        <div class="card" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'100' }}">
+                            <div class="card-image-container">
+                                {% if product.image %}
+                                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img">
+                                {% else %}
+                                    <img src="{% static 'images/no-image-available.jpg' %}" alt="No Image" class="card-img">
+                                {% endif %}
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product.name }}</h5>
+                                <p class="card-text">{{ product.description|truncatewords:20 }}</p>
+                                <p class="price">{{ product.price }} شيكل</p>
+                                <div class="btn-group">
+                                    <button 
+                                        class="btn btn-danger add-to-cart-btn" 
+                                        data-product-id="{{ product.pk }}" 
+                                        data-product-name="{{ product.name }}" 
+                                        data-product-price="{{ product.price }}"
+                                    >
+                                        إضافة إلى السلة
+                                    </button>
+                                    <a href="{% url 'product-detail' product.pk %}" class="btn btn-primary">تفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <p>لا توجد منتجات متاحة في هذا التصنيف.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    {% endfor %}
+
+    <!-- الرسالة النهائية -->
+    <br><br>
+    <h4 class="sry-msg">Uh-Oh! We are <span class="colored-word">done</span> 🛒</h4> 
+    <hr class="last-hr-of-product">
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    $(document).ready(function(){
+        // الحصول على توكن CSRF من الكوكيز
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // هل الكوكيز يبدأ بالاسم المطلوب؟
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        const csrftoken = getCookie('csrftoken');
+
+        // إعداد AJAX لتضمين توكن CSRF في كل الطلبات
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+                    // فقط للطلبات المحلية
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+        // التعامل مع نقر زر "إضافة إلى السلة"
+        $('.add-to-cart-btn').click(function(){
+            const productId = $(this).data('product-id');
+            $.ajax({
+                url: "{% url 'add-to-cart' 0 %}".replace('/0/', '/' + productId + '/'),
+                type: 'POST',
+                data: {
+                    'product_id': productId
+                },
+                success: function(response){
+                    if(response.status === 'success'){
+                        // تحديث عدد العناصر في السلة (يمكنك تعديل هذا الجزء بناءً على كيفية عرضك لعدد العناصر)
+                        $('#cart-count').text(response.cart_count);
+                        alert(response.message || 'تمت إضافة المنتج إلى السلة بنجاح.');
+                    } else {
+                        alert('حدث خطأ أثناء إضافة المنتج إلى السلة.');
+                    }
+                },
+                error: function(){
+                    alert('حدث خطأ أثناء الاتصال بالخادم.');
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

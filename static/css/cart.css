@@ -1,0 +1,76 @@
+
+
+
+.cart-title {
+    color: #007bff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.table {
+    background-color: #f9f9f9;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table th {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #e9ecef;
+}
+
+
+.remove-from-cart-btn {
+    transition: background-color 0.3s ease;
+}
+
+.remove-from-cart-btn:hover {
+    background-color: #c82333;
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+
+.alert-info {
+    font-size: 1.1em;
+    text-align: center;
+}
+
+
+.cart-container {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+@media (max-width: 576px) {
+    .cart-title {
+        font-size: 1.5em;
+    }
+
+    .cart-total {
+        font-size: 1.2em;
+    }
+
+    .table th, .table td {
+        padding: 0.5rem;
+    }
+
+    .remove-from-cart-btn {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.8em;
+    }
+}

@@ -1,0 +1,479 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Products | Sanaa Boutique{% endblock %}
+
+{% block content %}
+    <!-- Main Header -->
+    <header class="main-header text-center my-5" data-aos="fade-down">
+        <h2 class="main-head-of-products">Everyone Has A Style Statement<br>
+            <span class="colored-word-bigger-size">FIND YOURS HERE!</span>
+        </h2>
+    </header>
+    <!-- End of Main Header -->
+    
+    <!-- Background Image Section -->
+    <section class="bg-images" data-aos="fade-up">
+        <img src="{% static 'images/products-img/marcus-loke-xXJ6utyoSw0-unsplash (1).jpg' %}" alt="Merlin Fashion Collection" class="img-fluid rounded shadow">
+    </section>
+    <!-- End of Background Image Section -->
+    
+    <!-- Informational Message -->
+    <section class="info-message my-4">
+        <div class="container">
+            <p class="msg-ps">
+                <span class="colored-word">Click</span> on the product to add it to your shopping list.
+                <br>Go below and check <span class="colored-word">YOUR CART</span> for details.
+            </p>
+        </div>
+    </section>
+    <!-- End of Informational Message -->
+    
+    <!-- For Her Section -->
+    <section class="py-5">
+        <div class="container">
+            <h1>For <span class="colored-word">Her</span></h1>
+            <hr class="products-hr">
+            <div class="row mt-4 g-4">
+                <!-- منتج 1 -->
+                <div class="col-md-3" data-aos="fade-up">
+                    <div class="card h-100">
+                        <img src="{% static 'images/young-woman-watering-green-plant-pot.jpg' %}" class="card-img-top" alt="AKS Kurta with Plazzzo & Dupatta" onclick="addToCart('AKS Kurta with Plazzzo & Dupatta', '₪1799')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">AKS Kurta with Plazzzo & Dupatta</h5>
+                            <p class="card-text">Elegant kurta set perfect for festive occasions.</p>
+                            <p class="price">₪1799</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('AKS Kurta with Plazzzo & Dupatta', '₪1799')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 2 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <img src="{% static 'images/young-woman-watering-green-plant-pot.jpg' %}" class="card-img-top" alt="Nayo Women Solid Kurta with Trouser" onclick="addToCart('Nayo Women Solid Kurta with Trouser', '₪1649')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Nayo Women Solid Kurta with Trouser</h5>
+                            <p class="card-text">Comfortable and stylish kurta set for everyday wear.</p>
+                            <p class="price">₪1649</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('Nayo Women Solid Kurta with Trouser', '₪1649')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 3 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <img src="{% static 'images/young-woman-watering-green-plant-pot.jpg' %}" class="card-img-top" alt="AKS Printed Straight Kurta" onclick="addToCart('AKS Printed Straight Kurta', '₪659')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">AKS Printed Straight Kurta</h5>
+                            <p class="card-text">Chic printed kurta with a straight fit.</p>
+                            <p class="price">₪659</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('AKS Printed Straight Kurta', '₪659')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 4 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <img src="{% static 'images/young-woman-watering-green-plant-pot.jpg' %}" class="card-img-top" alt="Fabindia Slim Fit Straight Kurta" onclick="addToCart('Fabindia Slim Fit Straight Kurta', '₪1990')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Fabindia Slim Fit Straight Kurta</h5>
+                            <p class="card-text">Premium kurta with a slim fit design.</p>
+                            <p class="price">₪1990</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('Fabindia Slim Fit Straight Kurta', '₪1990')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- يمكنك إضافة المزيد من المنتجات بنفس الطريقة -->
+            </div>
+            
+            <!-- قسم Western -->
+            <h1 class="mt-5">Western</h1>
+            <hr class="products-hr">
+            <div class="row mt-4 g-4">
+                <!-- منتج 1 -->
+                <div class="col-md-3" data-aos="fade-up">
+                    <div class="card h-100">
+                        <img src="{% static 'images/high-angle-cowboy-inspiration-with-boots.jpg' %}" class="card-img-top" alt="Ives Solid Shirt Style Top" onclick="addToCart('Ives Solid Shirt Style Top', '₪549')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Ives Solid Shirt Style Top</h5>
+                            <p class="card-text">Stylish solid shirt suitable for casual outings.</p>
+                            <p class="price">₪549</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('Ives Solid Shirt Style Top', '₪549')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 2 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <img src="{% static 'images/high-angle-cowboy-inspiration-with-boots.jpg' %}" class="card-img-top" alt="Style Quotient Solid Top" onclick="addToCart('Style Quotient Solid Top', '₪554')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Style Quotient Solid Top</h5>
+                            <p class="card-text">Comfortable and trendy solid top for everyday wear.</p>
+                            <p class="price">₪554</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('Style Quotient Solid Top', '₪554')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 3 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <img src="{% static 'images/high-angle-cowboy-inspiration-with-boots.jpg' %}" class="card-img-top" alt="HERE&NOW Printed A-Line Top" onclick="addToCart('HERE&NOW Printed A-Line Top', '₪549')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">HERE&NOW Printed A-Line Top</h5>
+                            <p class="card-text">Elegant A-line top with beautiful prints.</p>
+                            <p class="price">₪549</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('HERE&NOW Printed A-Line Top', '₪549')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 4 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <img src="{% static 'images/high-angle-cowboy-inspiration-with-boots.jpg' %}" class="card-img-top" alt="SASSAFRAS Ruffled Shirt Style Top" onclick="addToCart('SASSAFRAS Ruffled Shirt Style Top', '₪549')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">SASSAFRAS Ruffled Shirt Style Top</h5>
+                            <p class="card-text">Trendy ruffled shirt for a stylish look.</p>
+                            <p class="price">₪549</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('SASSAFRAS Ruffled Shirt Style Top', '₪549')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم G-Shoes -->
+            <h1 class="mt-5">G-Shoes</h1>
+            <hr class="products-hr">
+            <div class="row mt-4 g-4">
+                <!-- منتج 1 -->
+                <div class="col-md-3" data-aos="fade-up">
+                    <div class="card h-100">
+                        <img src="{% static 'images/two-young-businesswoman-walking-street-near-office-buildi.jpg' %}" class="card-img-top" alt="PUMA Women LQDCell" onclick="addToCart('PUMA Women LQDCell', '₪6999')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">PUMA Women LQDCell</h5>
+                            <p class="card-text">Stylish and comfortable sneakers for everyday use.</p>
+                            <p class="price">₪6999</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('PUMA Women LQDCell', '₪6999')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 2 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <img src="{% static 'images/two-young-businesswoman-walking-street-near-office-buildi.jpg' %}" class="card-img-top" alt="ADIDAS Women Ultraboost19 Running" onclick="addToCart('ADIDAS Women Ultraboost19 Running', '₪11899')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">ADIDAS Women Ultraboost19 Running</h5>
+                            <p class="card-text">High-performance running shoes for active lifestyles.</p>
+                            <p class="price">₪11899</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('ADIDAS Women Ultraboost19 Running', '₪11899')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 3 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <img src="{% static 'images/two-young-businesswoman-walking-street-near-office-buildi.jpg' %}" class="card-img-top" alt="HRX Women Absolute Run" onclick="addToCart('HRX Women Absolute Run', '₪1549')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">HRX Women Absolute Run</h5>
+                            <p class="card-text">Comfortable sneakers designed for maximum performance.</p>
+                            <p class="price">₪1549</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('HRX Women Absolute Run', '₪1549')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 4 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <img src="{% static 'images/two-young-businesswoman-walking-street-near-office-buildi.jpg' %}" class="card-img-top" alt="Skercher Women GO RUN" onclick="addToCart('Skercher Women GO RUN', '₪3249')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Skercher Women GO RUN</h5>
+                            <p class="card-text">Durable and stylish running shoes for active women.</p>
+                            <p class="price">₪3249</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('Skercher Women GO RUN', '₪3249')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم Heels -->
+            <h1 class="mt-5">Heels</h1>
+            <hr class="products-hr">
+            <div class="row mt-4 g-4">
+                <!-- منتج 1 -->
+                <div class="col-md-3" data-aos="fade-up">
+                    <div class="card h-100">
+                        <img src="{% static 'images/portrait-woman-with-leg-pain_23-2150116822.jpg' %}" class="card-img-top" alt="Shetopia Women Heels" onclick="addToCart('Shetopia Women Heels', '₪499')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Shetopia Women Heels</h5>
+                            <p class="card-text">Elegant heels perfect for evening wear.</p>
+                            <p class="price">₪499</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('Shetopia Women Heels', '₪499')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 2 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <img src="{% static 'images/portrait-woman-with-leg-pain_23-2150116822.jpg' %}" class="card-img-top" alt="ZAPATOZ Women Heeled Boots" onclick="addToCart('ZAPATOZ Women Heeled Boots', '₪527')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">ZAPATOZ Women Heeled Boots</h5>
+                            <p class="card-text">Stylish heeled boots for a trendy look.</p>
+                            <p class="price">₪527</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('ZAPATOZ Women Heeled Boots', '₪527')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 3 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <img src="{% static 'images/portrait-woman-with-leg-pain_23-2150116822.jpg' %}" class="card-img-top" alt="Allen Solly Women Solid Wedged" onclick="addToCart('Allen Solly Women Solid Wedged', '₪2499')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Allen Solly Women Solid Wedged</h5>
+                            <p class="card-text">Comfortable wedged heels for everyday elegance.</p>
+                            <p class="price">₪2499</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('Allen Solly Women Solid Wedged', '₪2499')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 4 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <img src="{% static 'images/portrait-woman-with-leg-pain_23-2150116822.jpg' %}" class="card-img-top" alt="Shoetopia Women Heels" onclick="addToCart('Shoetopia Women Heels', '₪499')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Shoetopia Women Heels</h5>
+                            <p class="card-text">Elegant heels to complement your evening outfits.</p>
+                            <p class="price">₪499</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('Shoetopia Women Heels', '₪499')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of For Her Section -->
+    
+    <!-- For Him Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h1>For <span class="colored-word">Him</span></h1>
+            <hr class="products-hr">
+            <div class="row mt-4 g-4">
+                <!-- منتج 1 -->
+                <div class="col-md-3" data-aos="fade-up">
+                    <div class="card h-100">
+                        <img src="{% static 'images/front-view-man-holding-shopping-bags.jpg' %}" class="card-img-top" alt="Difference of Opinion Printed Shirt" onclick="addToCart('Difference of Opinion Printed Shirt', '₪449')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Difference of Opinion Printed Shirt</h5>
+                            <p class="card-text">Casual printed shirt for a stylish look.</p>
+                            <p class="price">₪449</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('Difference of Opinion Printed Shirt', '₪449')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 2 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <img src="{% static 'images/front-view-man-holding-shopping-bags.jpg' %}" class="card-img-top" alt="Moda Rapido Printed Round Neck T-shirt" onclick="addToCart('Moda Rapido Printed Round Neck T-shirt', '₪486')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Moda Rapido Printed Round Neck T-shirt</h5>
+                            <p class="card-text">Comfortable round neck T-shirt with trendy prints.</p>
+                            <p class="price">₪486</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('Moda Rapido Printed Round Neck T-shirt', '₪486')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 3 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <img src="{% static 'images/front-view-man-holding-shopping-bags.jpg' %}" class="card-img-top" alt="DILLINGER Colourblocked Round Neck T-shirt" onclick="addToCart('DILLINGER Colourblocked Round Neck T-shirt', '₪404')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">DILLINGER Colourblocked Round Neck T-shirt</h5>
+                            <p class="card-text">Stylish colourblocked T-shirt for a modern look.</p>
+                            <p class="price">₪404</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('DILLINGER Colourblocked Round Neck T-shirt', '₪404')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 4 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <img src="{% static 'images/front-view-man-holding-shopping-bags.jpg' %}" class="card-img-top" alt="Roadster T-shirt with Shoulder patch" onclick="addToCart('Roadster T-shirt with Shoulder patch', '₪519')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Roadster T-shirt with Shoulder patch</h5>
+                            <p class="card-text">Trendy T-shirt with unique shoulder patches.</p>
+                            <p class="price">₪519</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('Roadster T-shirt with Shoulder patch', '₪519')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم Jeans -->
+            <h1 class="mt-5">Jeans</h1>
+            <hr class="products-hr">
+            <div class="row mt-4 g-4">
+                <!-- منتج 1 -->
+                <div class="col-md-3" data-aos="fade-up">
+                    <div class="card h-100">
+                        <img src="{% static 'images/denims_1303-4488.jpg' %}" class="card-img-top" alt="HIGHLANDER Men Slim Fit Jeans" onclick="addToCart('HIGHLANDER Men Slim Fit Jeans', '₪874')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">HIGHLANDER Men Slim Fit Jeans</h5>
+                            <p class="card-text">Comfortable slim fit jeans for a sleek look.</p>
+                            <p class="price">₪874</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('HIGHLANDER Men Slim Fit Jeans', '₪874')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 2 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <img src="{% static 'images/denims_1303-4488.jpg' %}" class="card-img-top" alt="Roadster Men Super Skinny Fit Jeans" onclick="addToCart('Roadster Men Super Skinny Fit Jeans', '₪1199')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Roadster Men Super Skinny Fit Jeans</h5>
+                            <p class="card-text">Ultra-skinny jeans for a trendy appearance.</p>
+                            <p class="price">₪1199</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('Roadster Men Super Skinny Fit Jeans', '₪1199')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 3 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <img src="{% static 'images/denims_1303-4488.jpg' %}" class="card-img-top" alt="Calvin Klein Jeans Mean Slim Straight Jeans" onclick="addToCart('Calvin Klein Jeans Mean Slim Straight Jeans', '₪9599')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Calvin Klein Jeans Mean Slim Straight Jeans</h5>
+                            <p class="card-text">Premium straight fit jeans with Calvin Klein quality.</p>
+                            <p class="price">₪9599</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('Calvin Klein Jeans Mean Slim Straight Jeans', '₪9599')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 4 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <img src="{% static 'images/denims_1303-4488.jpg' %}" class="card-img-top" alt="LOCOMOTIVE Mean Slim Fit Jeans" onclick="addToCart('LOCOMOTIVE Mean Slim Fit Jeans', '₪999')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">LOCOMOTIVE Mean Slim Fit Jeans</h5>
+                            <p class="card-text">Stylish slim fit jeans for modern men.</p>
+                            <p class="price">₪999</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('LOCOMOTIVE Mean Slim Fit Jeans', '₪999')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم Joggers -->
+            <h1 class="mt-5">Joggers</h1>
+            <hr class="products-hr">
+            <div class="row mt-4 g-4">
+                <!-- منتج 1 -->
+                <div class="col-md-3" data-aos="fade-up">
+                    <div class="card h-100">
+                        <img src="{% static 'images/full-length-photo-pretty-young-woman-black-sportswear-posing-street-while-standing-lawn-outdoors-female-fashion-city-lifestyle_132075-9220.jpg' %}" class="card-img-top" alt="HRX Men Solid Joggers" onclick="addToCart('HRX Men Solid Joggers', '₪934')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">HRX Men Solid Joggers</h5>
+                            <p class="card-text">Comfortable joggers for an active lifestyle.</p>
+                            <p class="price">₪934</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('HRX Men Solid Joggers', '₪934')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 2 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <img src="{% static 'images/full-length-photo-pretty-young-woman-black-sportswear-posing-street-while-standing-lawn-outdoors-female-fashion-city-lifestyle_132075-9220.jpg' %}" class="card-img-top" alt="HRX Men Solid Joggers" onclick="addToCart('HRX Men Solid Joggers', '₪934')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">HRX Men Solid Joggers</h5>
+                            <p class="card-text">Comfortable joggers for an active lifestyle.</p>
+                            <p class="price">₪934</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('HRX Men Solid Joggers', '₪934')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 3 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <img src="{% static 'images/full-length-photo-pretty-young-woman-black-sportswear-posing-street-while-standing-lawn-outdoors-female-fashion-city-lifestyle_132075-9220.jpg' %}" class="card-img-top" alt="HRX Men Solid Joggers" onclick="addToCart('HRX Men Solid Joggers', '₪934')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">HRX Men Solid Joggers</h5>
+                            <p class="card-text">Comfortable joggers for an active lifestyle.</p>
+                            <p class="price">₪934</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('HRX Men Solid Joggers', '₪934')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 4 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <img src="{% static 'images/full-length-photo-pretty-young-woman-black-sportswear-posing-street-while-standing-lawn-outdoors-female-fashion-city-lifestyle_132075-9220.jpg' %}" class="card-img-top" alt="HRX Men Solid Joggers" onclick="addToCart('HRX Men Solid Joggers', '₪934')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">HRX Men Solid Joggers</h5>
+                            <p class="card-text">Comfortable joggers for an active lifestyle.</p>
+                            <p class="price">₪934</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('HRX Men Solid Joggers', '₪934')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم Shoes -->
+            <h1 class="mt-5">Shoes</h1>
+            <hr class="products-hr">
+            <div class="row mt-4 g-4">
+                <!-- منتج 1 -->
+                <div class="col-md-3" data-aos="fade-up">
+                    <div class="card h-100">
+                        <img src="{% static 'images/composition-beautiful-mother-s-day-elements.jpg' %}" class="card-img-top" alt="PUMA Men Clasp IDP Sneakers" onclick="addToCart('PUMA Men Clasp IDP Sneakers', '₪1304')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">PUMA Men Clasp IDP Sneakers</h5>
+                            <p class="card-text">Stylish and durable sneakers for everyday use.</p>
+                            <p class="price">₪1304</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('PUMA Men Clasp IDP Sneakers', '₪1304')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 2 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <img src="{% static 'images/composition-beautiful-mother-s-day-elements.jpg' %}" class="card-img-top" alt="Levis Men Sneakers" onclick="addToCart('Levis Men Sneakers', '₪1169')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Levis Men Sneakers</h5>
+                            <p class="card-text">Comfortable sneakers with a classic design.</p>
+                            <p class="price">₪1169</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('Levis Men Sneakers', '₪1169')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 3 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <img src="{% static 'images/composition-beautiful-mother-s-day-elements.jpg' %}" class="card-img-top" alt="Mactree Men Sneakers" onclick="addToCart('Mactree Men Sneakers', '₪679')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Mactree Men Sneakers</h5>
+                            <p class="card-text">Affordable sneakers with a trendy look.</p>
+                            <p class="price">₪679</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('Mactree Men Sneakers', '₪679')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- منتج 4 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <img src="{% static 'images/composition-beautiful-mother-s-day-elements.jpg' %}" class="card-img-top" alt="HRX Men Pro Sneakers" onclick="addToCart('HRX Men Pro Sneakers', '₪1699')" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">HRX Men Pro Sneakers</h5>
+                            <p class="card-text">High-performance sneakers for active men.</p>
+                            <p class="price">₪1699</p>
+                            <button class="btn btn-danger mt-2" onclick="addToCart('HRX Men Pro Sneakers', '₪1699')">إضافة إلى السلة</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- رسالة ختامية -->
+            <br><br>
+            <h4 class="sry-msg">Uh-Oh! We are<span class="colored-word"> done</span> 🛒</h4> 
+            <hr class="last-hr-of-product">
+        </div>
+    </section>
+    <!-- End of For Him Section -->
+{% endblock %}

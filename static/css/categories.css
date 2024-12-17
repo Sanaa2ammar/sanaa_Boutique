@@ -1,0 +1,243 @@
+/* categories.css */
+
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/* Main Header */
+.main-head-of-color-gold {
+    padding-top: 110px;
+    margin: 20px;
+    text-align: center;
+    color: #caa529;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+}
+
+.main-head-of-color-gold + hr {
+    max-width: 200px;
+    border:1px solid #caa529;
+    margin: 0 auto;
+}
+
+/* Background Image Section */
+.product-img {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin: 20px 0;
+}
+
+.product-img img {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+ 
+    transition: transform 0.3s ease;
+}
+
+.product-img img:hover {
+    transform: scale(1.05);
+}
+
+/* Trending Now Section */
+.trends-header {
+    color: #caa529;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+}
+
+.trends-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 50px;
+}
+
+.trends-categories a img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.trends-categories a img:hover {
+    transform: scale(1.05);
+}
+
+/* For Her Section */
+.for-her {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 50px;
+}
+
+.for-her a img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.for-her a img:hover {
+    transform: scale(1.05);
+}
+
+/* For Him Section */
+.for-him {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 0 50px;
+}
+
+.for-him a img {
+    width: 130%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    padding: 20px;
+}
+
+.for-him a img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+}
+
+.footer-section h4 {
+    margin-bottom: 20px;
+    color: #caa529;
+    font-size: 1.5rem;
+}
+
+.footer-section.about p {
+    line-height: 1.6;
+}
+
+.footer-section.links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section.links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section.links ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section.links ul li a:hover {
+    color: #caa529;
+}
+
+.footer-section.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section.contact-form input,
+.footer-section.contact-form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-section.contact-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #caa529;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.footer-section.contact-form button:hover {
+    background-color: #f84258;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    border-top: 1px solid #555;
+    padding-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+.socials a {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.socials a:hover {
+    color: #caa529;
+}
+
+@media (max-width: 768px) {
+    .trends-categories,
+    .for-her,
+    .for-him {
+        padding: 0 20px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin: 10px 0;
+    }
+
+    .for-him {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

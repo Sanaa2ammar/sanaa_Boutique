@@ -1,0 +1,49 @@
+<!-- cart/templates/cart/cart.html -->
+{% extends 'base.html' %}
+{% load cart_extras %}  
+
+{% block title %}Shopping Cart{% endblock %}
+
+{% block content %}
+    <div class="cart-container">
+        <h2 class="cart-title">Shopping Cart</h2>
+        {% if items %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in items %}
+                            <tr id="cart-item-{{ item.id }}">
+                                <td>{{ item.product.name }}</td>
+                                <td>{{ item.quantity }}</td>
+                                <td>{{ item.product.price }} Shekels</td>
+                                <td>{{ item.product.price|multiply:item.quantity }} shiakel</td>
+                                <td>
+                                    <button 
+                                        class="btn btn-danger btn-sm remove-from-cart-btn" 
+                                        data-item-id="{{ item.id }}"
+                                    >
+                                        Remove
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <h4 class="cart-total">Total: {{ total }} Shekels</h4>
+        {% else %}
+            <p class="alert alert-info">Your shopping cart is empty.</p>
+        {% endif %}
+    </div>
+{% endblock %}
+
+

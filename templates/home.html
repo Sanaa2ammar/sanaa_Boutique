@@ -1,0 +1,197 @@
+<!-- accounts/templates/home.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}الصفحة الرئيسية{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+     
+    <section class="hero">
+        <div class="hero-image" data-aos="fade-in">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'images/Off-the-Wall.jpg' %}" alt="Merlin Fashion Collection">
+            </a>
+            <div class="hero-text">
+                <h2>Discover Your Style</h2>
+                <a href="{% url 'category-list' %}" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+    <!-- End of Hero Section -->
+
+    <!-- Offers Section -->
+    <section class="offers" data-aos="fade-up">
+        <div class="container">
+            <div class="offer-item">
+                <a href="{% url 'category-list' %}">
+                    <img src="{% static 'images/Blue Summer Collection Instagram Post.png' %}" alt="Summer Collection">
+                    <div class="offer-text">Summer Collection</div>
+                </a>
+            </div>
+            <div class="offer-item">
+                <a href="{% url 'category-list' %}">
+                    <img src="{% static 'images/White Minimalist New Arrival Instagram Post.png' %}" alt="New Arrivals">
+                    <div class="offer-text">New Arrivals</div>
+                </a>
+            </div>
+            <div class="offer-item">
+                <a href="{% url 'category-list' %}">
+                    <img src="{% static 'images/Grey Black Modern Minimalist Simple Tech Fashion Boutique Brand Best Seller New Arrival Instagram Post.png' %}" alt="Best Sellers">
+                    <div class="offer-text">Best Sellers</div>
+                </a>
+            </div>
+            <div class="offer-item">
+                <a href="{% url 'category-list' %}">
+                    <img src="{% static 'images/Purple and Pink Minimal Exclusive Big Sale Instagram Post.png' %}" alt="Exclusive Deals">
+                    <div class="offer-text">Exclusive Deals</div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- End of Offers Section -->
+
+    <!-- Trending Now Section -->
+    <section class="trending" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">TRENDING NOW</h2>
+            <p class="section-subtitle">From the runway to your wardrobe</p>
+            <div class="trending-grid">
+                {% for product in products %}
+                    <div class="trending-item" data-aos="zoom-in" data-aos-delay="{{ forloop.counter0|add:100 }}">
+                        <a href="{% url 'product-detail' product.id %}">
+                            {% if product.image %}
+                                <img src="{{ product.image.url }}" alt="Trending Product {{ forloop.counter }}">
+                            {% else %}
+                                <img src="{% static 'images/no-image-available.jpg' %}" alt="No Image Available">
+                            {% endif %}
+                            <div class="product-info">
+                                <h3>{{ product.name }}</h3>
+                                <p>{{ product.description }}</p>
+                            </div>
+                        </a>
+                    </div>
+                {% empty %}
+                    <p>No products available.</p>
+                {% endfor %}
+            </div>            
+        </div>
+    </section>
+    <!-- End of Trending Now Section -->
+
+    <!-- For Her Section -->
+    <section class="py-5">
+        <div class="container">
+            <h1>For <span class="colored-word">Her</span></h1>
+            <hr class="products-hr">
+            <div class="row mt-4 g-4">
+                {% for category in categories %}
+                    {% if category.name == "For Her" %}
+                        {% for product in category.product_set.all %}
+                            <div class="col-md-3" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'100' }}">
+                                <div class="card h-100">
+                                    {% if product.image %}
+                                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" style="cursor: pointer;">
+                                    {% endif %}
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">{{ product.name }}</h5>
+                                        <p class="card-text">{{ product.description|truncatewords:20 }}</p>
+                                        <p class="price">{{ product.price }} شيكل</p>
+                                        <button class="btn btn-danger mt-2" data-product-id="{{ product.pk }}" data-product-name="{{ product.name }}" data-product-price="{{ product.price }}">إضافة إلى السلة</button>
+                                        <a href="{% url 'product-detail' product.pk %}" class="btn btn-primary mt-2">تفاصيل</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- End of For Her Section -->
+
+    <!-- بقية الأقسام مثل Western، G-Shoes، Heels ... يمكن إضافتها بنفس الطريقة -->
+
+    <!-- Styles to Steal Section -->
+    <section class="styles-to-steal" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">STYLES TO STEAL</h2>
+            <p class="section-subtitle">Inspired by influencers</p>
+            <div class="styles-grid">
+                <div class="style-item" data-aos="flip-left">
+                    <a href="{% url 'product-list' %}">
+                        <img src="{% static 'images/medium-shot-cute-girl-with-ice-skates-posing_23-2148350089.jpg' %}" alt="Style 1">
+                        <div class="style-overlay">
+                            <h3>Stylish Shopper</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="style-item" data-aos="flip-left" data-aos-delay="100">
+                    <a href="{% url 'product-list' %}">
+                        <img src="{% static 'images/outdoor-fashion-portrait-stylish-pretty-young-woman-wearing-bohemian-outfit-vintage-hat-long-blonde-hairs-enjoy-free-sunny-autumn-day-good-weather-chill-relax-joy-vacation_291049-741.avif' %}" alt="Style 2">
+                        <div class="style-overlay">
+                            <h3>Discount Diva</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="style-item" data-aos="flip-left" data-aos-delay="200">
+                    <a href="{% url 'product-list' %}">
+                        <img src="{% static 'images/smiling-young-woman-holding-sale-tag-hand-pointing-finger-shopping-bags_23-2147968432.jpg' %}" alt="Style 3">
+                        <div class="style-overlay">
+                            <h3>Cozy Ice Skater</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="style-item" data-aos="flip-left" data-aos-delay="300">
+                    <a href="{% url 'product-list' %}">
+                        <img src="{% static 'images/stylish-young-woman-holding-shopping-bags-standing-front-window-display_23-2147968481.jpg' %}" alt="Style 4">
+                        <div class="style-overlay">
+                            <h3>Stylish Shopper</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Styles to Steal Section -->
+
+    <!-- Interactive Video Section -->
+    <section class="video-section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Why Sanaa Boutique?</h2>
+            <p class="section-subtitle">Watch our video to learn more</p>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/ToOMd1Aov4o" 
+                    title="Introduction to Merlin Fashion" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+    <!-- End of Interactive Video Section -->
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Customer Testimonials</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-item">
+                    <p>"Best shopping experience ever! High-quality products and excellent customer service."</p>
+                    <h4>- Ahmed Ali</h4>
+                </div>
+                <div class="testimonial-item">
+                    <p>"I love the variety of products and their stylish designs."</p>
+                    <h4>- Sarah Mohammed</h4>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Fast delivery and competitive prices. I will definitely come back!"</p>
+                    <h4>- Leila Hassan</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Testimonials Section -->
+{% endblock %}
